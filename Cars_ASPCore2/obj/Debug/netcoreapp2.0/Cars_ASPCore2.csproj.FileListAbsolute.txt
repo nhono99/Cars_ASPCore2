@@ -1,0 +1,12 @@
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\bin\Debug\netcoreapp2.0\Cars_ASPCore2.deps.json
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\bin\Debug\netcoreapp2.0\Cars_ASPCore2.runtimeconfig.json
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\bin\Debug\netcoreapp2.0\Cars_ASPCore2.runtimeconfig.dev.json
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\bin\Debug\netcoreapp2.0\Cars_ASPCore2.dll
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\bin\Debug\netcoreapp2.0\Cars_ASPCore2.pdb
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\obj\Debug\netcoreapp2.0\Cars_ASPCore2.csprojAssemblyReference.cache
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\obj\Debug\netcoreapp2.0\Cars_ASPCore2.csproj.CoreCompileInputs.cache
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\obj\Debug\netcoreapp2.0\Cars_ASPCore2.AssemblyInfoInputs.cache
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\obj\Debug\netcoreapp2.0\Cars_ASPCore2.AssemblyInfo.cs
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\obj\Debug\netcoreapp2.0\Cars_ASPCore2.dll
+C:\Users\Tiffany\source\repos\Cars_ASPCore2\Cars_ASPCore2\obj\Debug\netcoreapp2.0\Cars_ASPCore2.pdb
