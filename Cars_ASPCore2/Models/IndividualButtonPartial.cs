@@ -15,7 +15,7 @@ namespace Cars_ASPCore2.Models
 
         public int? ServiceId { get; set; }
         public string CustomerId { get; set; }
-
+        public int? CarId { get; set; }
         public string ActionParameters {
             get
             {
@@ -35,7 +35,13 @@ namespace Cars_ASPCore2.Models
                         param.Append(String.Format("{0}", CustomerId));
                     }
                 }
-              
+                if (CarId != null)
+                {
+                    if (CarId != 0)
+                    {
+                        param.Append(String.Format("{0}", CarId));
+                    }
+                }
                 return param.ToString().Substring(0, param.Length);
             }
 

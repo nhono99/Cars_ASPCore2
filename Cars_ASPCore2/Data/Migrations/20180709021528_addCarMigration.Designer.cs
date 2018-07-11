@@ -11,9 +11,10 @@ using System;
 namespace Cars_ASPCore2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180709021528_addCarMigration")]
+    partial class addCarMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,23 +87,19 @@ namespace Cars_ASPCore2.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Color")
-                        .IsRequired();
+                    b.Property<string>("Color");
 
-                    b.Property<string>("Make")
-                        .IsRequired();
+                    b.Property<string>("Make");
 
                     b.Property<double>("Miles");
 
-                    b.Property<string>("Model")
-                        .IsRequired();
+                    b.Property<string>("Model");
 
                     b.Property<string>("Style");
 
                     b.Property<string>("UserId");
 
-                    b.Property<string>("VIN")
-                        .IsRequired();
+                    b.Property<string>("VIN");
 
                     b.Property<int>("Year");
 
