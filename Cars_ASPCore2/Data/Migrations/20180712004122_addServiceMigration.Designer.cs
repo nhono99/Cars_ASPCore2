@@ -11,9 +11,10 @@ using System;
 namespace Cars_ASPCore2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180712004122_addServiceMigration")]
+    partial class addServiceMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,17 +121,21 @@ namespace Cars_ASPCore2.Data.Migrations
 
                     b.Property<int>("CarId");
 
+                    b.Property<int?>("CardId");
+
                     b.Property<DateTime>("DateAdded");
 
                     b.Property<string>("Details");
 
                     b.Property<double>("Miles");
 
-                    b.Property<double>("Price");
+                    b.Property<int>("ServiceId");
 
-                    b.Property<int>("ServiceTypeId");
+                    b.Property<int?>("ServiceTypeId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CardId");
 
                     b.HasIndex("ServiceTypeId");
 
@@ -267,10 +272,13 @@ namespace Cars_ASPCore2.Data.Migrations
 
             modelBuilder.Entity("Cars_ASPCore2.Models.Service", b =>
                 {
+                    b.HasOne("Cars_ASPCore2.Models.Car", "Car")
+                        .WithMany()
+                        .HasForeignKey("CardId");
+
                     b.HasOne("Cars_ASPCore2.Models.ServiceType", "ServiceType")
                         .WithMany()
-                        .HasForeignKey("ServiceTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ServiceTypeId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

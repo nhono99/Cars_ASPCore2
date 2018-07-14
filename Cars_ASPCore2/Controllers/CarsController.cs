@@ -129,8 +129,6 @@ namespace Cars_ASPCore2.Controllers
             return View(car);
         }
 
-        
-
         //Delete POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

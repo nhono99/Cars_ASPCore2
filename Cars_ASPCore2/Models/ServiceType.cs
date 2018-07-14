@@ -7,6 +7,7 @@ namespace Cars_ASPCore2.Models
 {
     public class ServiceType
     {
+        [Required]
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }

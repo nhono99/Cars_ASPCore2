@@ -5,6 +5,10 @@
     <UserSecretsId>aspnet-Cars_ASPCore2-A3B56274-81B3-4D29-AE2A-FA8717A37D83</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ViewModel\CarAndServicesViewModel.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />

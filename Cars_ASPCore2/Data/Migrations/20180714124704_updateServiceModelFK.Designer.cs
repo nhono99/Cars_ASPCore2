@@ -11,9 +11,10 @@ using System;
 namespace Cars_ASPCore2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180714124704_updateServiceModelFK")]
+    partial class updateServiceModelFK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,8 +132,6 @@ namespace Cars_ASPCore2.Data.Migrations
                     b.Property<int>("ServiceTypeId");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ServiceTypeId");
 
                     b.ToTable("Services");
                 });
@@ -263,14 +262,6 @@ namespace Cars_ASPCore2.Data.Migrations
                     b.HasOne("Cars_ASPCore2.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("Cars_ASPCore2.Models.Service", b =>
-                {
-                    b.HasOne("Cars_ASPCore2.Models.ServiceType", "ServiceType")
-                        .WithMany()
-                        .HasForeignKey("ServiceTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

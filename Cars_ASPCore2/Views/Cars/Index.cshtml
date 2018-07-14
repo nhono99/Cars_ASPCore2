@@ -85,7 +85,8 @@ else
                 <td>@Html.DisplayFor(m => item.Style)</td>
                 <td>@Html.DisplayFor(m => item.Color)</td>
                 @if (User.IsInRole(StaticDetails.CustomerEndUser))
-                {
+                        {
+                    //user can only view service history
                     <td style="width:100px;">
                         <a class="btn btn-primary btn-sm" asp-controller="Services" asp-action="Index" asp-route-carId="@item.Id">
                             <span class="glyphicon glyphicon-wrench"></span>&nbsp;Service History
@@ -95,8 +96,9 @@ else
                 }
                 else
                 {
+                    //user can add new service
                     <td style="width:100px;">
-                        <a class="btn btn-success btn-sm" asp-controller="Services" asp-action="Index" asp-route-carId="@item.Id">
+                        <a class="btn btn-success btn-sm" asp-controller="Services" asp-action="Create" asp-route-carId="@item.Id">
                             <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Service
                         </a>
                     </td>
