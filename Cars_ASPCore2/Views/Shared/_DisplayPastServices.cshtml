@@ -1,5 +1,5 @@
 ﻿@model Cars_ASPCore2.ViewModel.CarInServicesViewModel
-
+@using Cars_ASPCore2.Utility
 <div>
     <table class="table table-condensed table-hover">
         <tr>
@@ -27,8 +27,9 @@
             <td>@Html.DisplayFor(m => item.Price)</td>
             <td>@Html.DisplayFor(m => item.Details)</td>
             <td>@Html.DisplayFor(m => item.ServiceType.Name)</td>
+            <td>@Html.DisplayFor(m => item.DateAdded)</td>
             <td>
-                @if(item.DateAdded.Date == DateTime.Now.Date)
+                @if(item.DateAdded.Date == DateTime.Now.Date && User.IsInRole(StaticDetails.AdminEndUser))
                 {
                     @Html.Partial("_IndividualButtonPartial",
                                     new IndividualButtonPartial { 

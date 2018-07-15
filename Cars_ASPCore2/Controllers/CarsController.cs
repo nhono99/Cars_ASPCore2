@@ -8,9 +8,11 @@ using System.Security.Claims;
 using Cars_ASPCore2.ViewModel;
 using Cars_ASPCore2.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cars_ASPCore2.Controllers
 {
+    [Authorize]
     public class CarsController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -139,6 +141,8 @@ namespace Cars_ASPCore2.Controllers
             {
                 return NotFound();
             }
+            var services = _db.Services.Where(c=>c.CarId == car.Id);
+            _db.RemoveRange(services);
             _db.Cars.Remove(car);
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index), new {userId = car.UserId});

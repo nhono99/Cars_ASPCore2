@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Cars_ASPCore2.Data;
 using Cars_ASPCore2.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authorization;
+using Cars_ASPCore2.Utility;
 namespace Cars_ASPCore2.Controllers
 {
+    [Authorize(Roles = StaticDetails.AdminEndUser)]
     public class ServiceTypesController : Controller
     {
         private readonly ApplicationDbContext _db;

@@ -10,7 +10,11 @@
 <h2>Service Record</h2>
 <div class="row form-border">
     @Html.Partial("_DisplayPastServices", Model)
-    <input type="button" class="btn btn-sm btn-primary" value="Print" onclick="window.print();" />
+    @if (Model.PastServiceObject.Count() > 0)
+    {
+        <input type="button" class="btn btn-sm btn-primary" value="Print" onclick="window.print();" />
+    }
+
     <a asp-action="Index" asp-controller="Cars" asp-route-userId="@Model.UserId" class="btn btn-sm btn-success ">
         Back to list
     </a>

@@ -7,6 +7,8 @@ using Cars_ASPCore2.Models;
 using Cars_ASPCore2.ViewModel;
 using Cars_ASPCore2.Data;
 using Microsoft.EntityFrameworkCore;
+using Cars_ASPCore2.Utility;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cars_ASPCore2.Controllers
 {
@@ -17,6 +19,7 @@ namespace Cars_ASPCore2.Controllers
         {
             _db = db;
         }
+        [Authorize]
         public IActionResult Index(int carId)
         {
             var car = _db.Cars.FirstOrDefault(c => c.Id == carId);
@@ -35,7 +38,7 @@ namespace Cars_ASPCore2.Controllers
 
             return View(model);
         }
-
+        [Authorize(Roles = StaticDetails.AdminEndUser)]
         //GET: Services/Create
         public IActionResult Create(int carId)
         {
@@ -56,6 +59,7 @@ namespace Cars_ASPCore2.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = StaticDetails.AdminEndUser)]
         //POST: Services/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -87,6 +91,7 @@ namespace Cars_ASPCore2.Controllers
             return View(newModel);
         }
 
+        [Authorize(Roles = StaticDetails.AdminEndUser)]
         //Delete Get
         public async Task<IActionResult> Delete(int? id)
         {
@@ -101,6 +106,7 @@ namespace Cars_ASPCore2.Controllers
 
             return View(service);
         }
+        [Authorize(Roles = StaticDetails.AdminEndUser)]
         //Delete Post
         [HttpPost,ActionName("Delete")]
         [ValidateAntiForgeryToken]
