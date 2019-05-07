@@ -77,6 +77,7 @@ namespace Cars_ASPCore2.Controllers
                     _logger.LogInformation("User logged in.");
                     var user = await _userManager.FindByEmailAsync(model.Email);
                     var role = await _userManager.GetRolesAsync(user);
+                    
                     if (role.FirstOrDefault().ToString().Equals(StaticDetails.AdminEndUser))
                     {
                         return RedirectToAction("Index","Users");
